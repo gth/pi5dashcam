@@ -4,18 +4,34 @@ Raspberry Pi 5 + UPS module + USB camera as dashcams + LCD as a rear view mirror
 # Goal
 1x rear dashcam, recording 24x7 & shown on LCD monitor whenever the engine is running
 
-# Current stage: ORDERING
-The following parts have been ordered:
-* RPi 5 16GB
-* Geekworm X1202 UPS module + 4 x 18650 batteries
+# Current stage: DELIVERY
+The following parts have been ordered and have started arriving:
+* ☑ RPi 5 16GB + active cooler
+* ☑ 4 x 18650 batteries (3.7V 3400mAh)
+* ☑ J5Create 360 1080p USB webcam
+* ☑ DFRobot Touchscreen (HDMI + USB) 10.5" 1920x1280
 * Geekworm case (that supports the X1202)
-* J5Create 360 1080p USB webcam
-* DFRobot 1920x1200 Touchscreen (HDMI + USB), either 8.9" or 10.5"
+* Geekworm X1202 UPS module
+* 256GB High Endurance uSD card
+
+# Early Test Phase
+* Pi Imager updated and image burned to test SD card - Pi OS (64 bit) - Debian 13.2 (trixie)
+* Pi Imager Customisation options - hostname, (no networking), user + password, 
+* Power up - initially unreliable, seems okay now though - to desktop
+* DHCP + ssh confirmed
+* Background set to (no image), color = black 
+* Apply latest patches - sudo apt-get update; sudo apt-get upgrade
+* host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
+
+# TODO: OS configuration
+* Disable IPv6
+* Tune bootup
 
 # Future stages
 Once the items are received I plan on testing first, then install into my vehicle.
 * Assemble and test -
-  * flash o/s + test pi speed and temp + cooling fan settings (preferably *off* unless hot)
+  * flash o/s + test pi speed and temp
+    * cooling fan *off* unless system gets hot
   * pi + monitor, test touch screen + power monitor separately from the Pi
   * add X1202 ups module - test power off triggers (accessories / voltage / loss of power)
   * add 1 x webcam - test basic functionality
@@ -26,10 +42,10 @@ Once the items are received I plan on testing first, then install into my vehicl
 
 # Likely Obstacles
 Generally expecting a few challenges, not least of which is just handling all the video.
-* If I run 2 x webcams, both j5s will appear as "j5" devices; possible performance contention, difficulty separating them
+* 2x J5 webcams will both appear as "j5" devices; possible performance/contention, etc.
 * Monitor may power itself from Pi (vehicle accessories being preferable, thus auto-on/off when engine is running)
 * Monitor on/off cycling may affect video output; scripts may need to handle this and reset layout, etc.
-* Some drivers may expect Pi OS with Desktop, which I'd like to avoid (no need for it, really)
+* Some drivers may expect Pi OS with Desktop vs. general preference for a lean system
 
 # Future goals
 Optimistically, assuming the basic functionality is achieved:
@@ -38,3 +54,10 @@ Optimistically, assuming the basic functionality is achieved:
 * Controlled shutdown capability based on car battery monitoring and/or temperature monitoring
 * 2x side-facing cameras for 360' coverage; probably low fps
 * Leverage car's cooling system option (centre console 'fridge')
+
+
+# Reference info
+ Raspberry Pi 5 Model B Rev 1.1  16GB
+ Debian GNU/Linux 13.2 (trixie)
+ Kernel: Linux 6.12.47+rpt-rpi-2712
+ Architecture: arm64
