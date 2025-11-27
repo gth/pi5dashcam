@@ -23,9 +23,12 @@ The following parts have been ordered and have started arriving:
 * Apply latest patches - sudo apt-get update; sudo apt-get upgrade
 * host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
 
-# TODO: OS configuration
-* Disable IPv6
-* Tune bootup
+# TODO
+* OS configuration
+  * Disable IPv6
+  * Tune bootup
+* Assembly
+  * Install screen protector 
 
 # Future stages
 Once the items are received I plan on testing first, then install into my vehicle.
