@@ -27,6 +27,7 @@ The following parts have been ordered and have started arriving:
 * Early video testing
   * First preview working: `DISPLAY=:0 ffplay -hide_banner -f v4l2 -framerate 30 -video_size 1920x1080  -input_format mjpeg  -i /dev/video0`
     * Observing a 3 second delay, which is... concerning.
+    * Disabled GUI desktop, and now FFPLAY is down to 1-to-1.5 seconds, which might be acceptable...
 
 # TODO
 * OS configuration
