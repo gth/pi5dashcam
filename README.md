@@ -16,9 +16,9 @@ The following parts have been ordered and have started arriving:
 
 # Early Test Phase
 * <a href="https://www.raspberrypi.com/software/">Pi Imager</a> updated and image burned to test SD card - <a href="https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-11-24/2025-11-24-raspios-trixie-arm64.img.xz">Pi OS, Debian 13.2 (64 bit, trixie)</a>
-* Pi Imager Customisation options - hostname, (no networking), user + password, 
+* Pi Imager Customisation options - hostname, (no networking yet), user + password, 
 * Power up - initially unreliable, seems okay now though - to desktop
-* DHCP + ssh confirmed
+* DHCP + ssh confirmed; uninstalled CUPS
 * Background set to (no image), color = black 
 * Apply latest patches - sudo apt-get update; sudo apt-get upgrade
 * host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
