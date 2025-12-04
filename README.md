@@ -7,11 +7,11 @@ Raspberry Pi 5 + UPS module + USB camera as dashcams + LCD as a rear view mirror
 # Current stage: DELIVERY
 The following parts have been ordered and have started arriving:
 * ☑ RPi 5 16GB + active cooler
-* ☑ 4 x 18650 batteries (3.7V 3400mAh)
+* ☑ 4 x 21700 batteries (<a href="">Samsung 40T 4000mAh 35A</a>)
 * ☑ J5Create 360 1080p USB webcam
 * ☑ DFRobot Touchscreen (HDMI + USB) 10.5" 1920x1280
-* Geekworm case (that supports the X1202)
-* Geekworm X1202 UPS module
+* Geekworm case (that supports the X1206)
+* Geekworm X1206 UPS module
 * 256GB High Endurance uSD card
 
 # Early Test Phase
@@ -46,7 +46,7 @@ Once the items are received I plan on testing first, then install into my vehicl
   * flash o/s + test pi speed and temp
     * cooling fan *off* unless system gets hot
   * pi + monitor, test touch screen + power monitor separately from the Pi
-  * add X1202 ups module - test power off triggers (accessories / voltage / loss of power)
+  * add X1206 ups module - test power off triggers (accessories / voltage / loss of power)
   * add 1 x webcam - test basic functionality
 * Scripts (inspired by Fishwithadeagle)
   * Test USB display image
