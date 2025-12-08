@@ -10,9 +10,9 @@ The following parts have been ordered and have started arriving:
 * ☑ 4 x 21700 batteries (<a href="">Samsung 40T 4000mAh 35A</a>)
 * ☑ J5Create 360 1080p USB webcam
 * ☑ DFRobot Touchscreen (HDMI + USB) 10.5" 1920x1280
-* Geekworm case (that supports the X1206)
+* ☑ Geekworm case (that supports the X1206)
+* ☑ 256GB High Endurance uSD card
 * Geekworm X1206 UPS module
-* 256GB High Endurance uSD card
 
 # Early Test Phase
 * <a href="https://www.raspberrypi.com/software/">Pi Imager</a> updated and image burned to test SD card - <a href="https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-11-24/2025-11-24-raspios-trixie-arm64.img.xz">Pi OS, Debian 13.2 (64 bit, trixie)</a>
@@ -32,6 +32,7 @@ The following parts have been ordered and have started arriving:
   * Second preview method working: `gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! fbdevsink`
     * Pre-requisite: remove DRM overlay from Pi config.txt
     * Almost no delay at all - nice!
+* Testing halted until X1206 arrivces, due to unstable power supply.
 
 # TODO
 * OS configuration
@@ -67,7 +68,6 @@ Optimistically, assuming the basic functionality is achieved:
 * Controlled shutdown capability based on car battery monitoring and/or temperature monitoring
 * 2x side-facing cameras for 360' coverage; probably low fps
 * Leverage car's cooling system option (centre console 'fridge')
-
 
 # Reference info
  Raspberry Pi 5 Model B Rev 1.1  16GB
