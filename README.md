@@ -9,7 +9,7 @@ The following parts have been ordered and have started arriving:
 * ☑ DFRobot Touchscreen (HDMI + USB) 10.5" 1920x1280
 * ☑ Geekworm case (that supports the X1206)
 * ☑ 256GB High Endurance uSD card
-* ⧖ Geekworm X1206 UPS module
+* ⌛ Geekworm X1206 UPS module
 
 # Early Test Phase
 * ☑ <a href="https://www.raspberrypi.com/software/">Pi Imager</a> updated and image burned to test SD card - <a href="https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-11-24/2025-11-24-raspios-trixie-arm64.img.xz">Pi OS, Debian 13.2 (64 bit, trixie)</a>
