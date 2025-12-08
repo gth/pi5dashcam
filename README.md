@@ -21,14 +21,14 @@ The following parts have been ordered and have started arriving:
 * ☑ host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
 * ☑ Installed <a href="https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c">gstreamer</a>
 * ☑ Power supply issues; RPi5 tantrums if it doesn't know it can get 5V 5A.  No joy trying to get it to negotiate with a 130W USB C laptop power supply (probably propietary)
-  * Will revisit this issue when X1206 arrives; will likely be resolved.
-  * For now, able to boot by removing all USB devices and only reinserting once desktop has loaded
+  * ⚠ Will revisit this issue when X1206 arrives; will likely be resolved.
+  * ⚠ For now, able to boot by removing all USB devices and only reinserting once desktop has loaded
 * ☑ Early video testing
   * ☑ First preview working: `DISPLAY=:0 ffplay -hide_banner -f v4l2 -framerate 30 -video_size 1920x1080  -input_format mjpeg  -i /dev/video0`
-    * Observing a 3 second delay, which is... concerning.
-    * Disabled GUI desktop, and now FFPLAY is down to 1-to-1.5 seconds, which might be acceptable...
+    * ⚠ Observing a 3 second delay, which is... concerning.
+    * ⚠ Disabled GUI desktop, and now FFPLAY is down to 1-to-1.5 seconds, which might be acceptable...
   * ☑ Second preview method working: `gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! fbdevsink`
-    * Pre-requisite: remove DRM overlay from Pi config.txt
+    * ☑ Pre-requisite: remove DRM overlay from Pi config.txt
     * ☑☑ Almost no delay at all - nice!
 * Testing halted until X1206 arrivces, due to unstable power supply.
 
