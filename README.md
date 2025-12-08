@@ -40,6 +40,9 @@ The following parts have been ordered and have started arriving:
   * Set CONFIG.TXT power setting (max USB current)
 * Assembly
   * Match batteries to X1206 UPS card (note: button-top batteries are NOT suitable for X1206 card (21700's) nor the X1202 card (18650's)
+  * Carefully identify correct instructions (geekworm have multiple case/card combinations)
+  * Match correct mounting screws to each mounting point (both card-to-pi and the case attachment points)
+    * (translucent plastic standoffs are for NVMe hat - not needed here)
   * Confirm power consumption vs. power usage (battery) vs. power supply (vehicle USB C) + battery charging
   * Install screen protector for LCD
 * Scripts
