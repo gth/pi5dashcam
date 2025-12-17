@@ -1,15 +1,16 @@
 # Goal: pi5dashcam
 Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7 (+ optionally, an LCD as a rearview mirror when engine's running)
 
-# Current stage: ASSEMBLY
-The following parts have been ordered and have started arriving:
+Parts list:
 * ☑ RPi 5 16GB + active cooler
 * ☑ 4 x 21700 batteries (<a href="">Samsung 40T 4000mAh 35A</a>)
 * ☑ J5Create 360 1080p USB webcam
 * ☑ DFRobot Touchscreen (HDMI + USB) 10.5" 1920x1280
 * ☑ Geekworm case (that supports the X1206)
 * ☑ 256GB High Endurance uSD card
-* ⌛ Geekworm X1206 UPS module
+* ☑ Geekworm X1206 UPS module (poor choice: does not accept input voltage range that vehicles produce)
+
+# Current stage: TESTING
 
 # Early Test Phase
 * ☑ <a href="https://www.raspberrypi.com/software/">Pi Imager</a> updated and image burned to test SD card - <a href="https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-11-24/2025-11-24-raspios-trixie-arm64.img.xz">Pi OS, Debian 13.2 (64 bit, trixie)</a>
@@ -30,16 +31,20 @@ The following parts have been ordered and have started arriving:
   * ☑ Second preview method working: `gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! fbdevsink`
     * ☑ Pre-requisite: remove DRM overlay from Pi config.txt
     * ☑☑ Almost no delay at all - nice!
-* ⧖ Testing halted until X1206 arrivces, due to unstable power supply.
+* ⧖ X1206 arrived - Pi power on is stable
+  * Amended eeprom config (max supply current)
+  * Amended firmware/config.txt (max USB current)
+  * Bash scripts (ported from bundled python code)
+    * X1206 Battery state of charge (tested range 30%-102%)
+    * Input voltage to X1206
+    * Pi input voltage 
 
 # TODO
 * OS configuration
   * Disable IPv6
   * Tune bootup
-  * Set EEPROM power setting (max supply current)
-  * Set CONFIG.TXT power setting (max USB current)
 * Assembly
-  * Match batteries to X1206 UPS card (note: button-top batteries are NOT suitable for X1206 card (21700's) nor the X1202 card (18650's)
+  * Match batteries to X1206 UPS card (note: button-top batteries are NOT suitable, e.g. X1206 card needs flat 21700s + X1202 card needs flat 18650s.
   * Carefully identify correct instructions (geekworm have multiple case/card combinations)
   * Match correct mounting screws to each mounting point (both card-to-pi and the case attachment points)
     * (translucent plastic standoffs are for NVMe hat - not needed here)
