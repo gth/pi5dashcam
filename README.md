@@ -6,7 +6,7 @@ Parts list:
 * ☑ 4 x 21700 batteries (<a href="">Samsung 40T 4000mAh 35A</a>)
 * ☑ J5Create 360 1080p USB webcam
 * ☑ DFRobot Touchscreen (HDMI + USB) 10.5" 1920x1280
-* ☑ Geekworm case (that supports the X1206)
+Geekworm case (that supports the X1206)
 * ☑ 256GB High Endurance uSD card
 * ☑ Geekworm X1206 UPS module (poor choice: does not accept input voltage range that vehicles produce)
 
@@ -35,16 +35,25 @@ Parts list:
   * Amended eeprom config (max supply current)
   * Amended firmware/config.txt (max USB current)
   * Bash scripts (ported from bundled python code)
-    * X1206 Battery state of charge (tested range 30%-102%)
-    * Input voltage to X1206
-    * Pi input voltage 
+    * ☑ X1206 Battery state of charge (tested range 0.1%-102%)
+    * ☑ X1206 Input voltage (3.x to 4.x)
+    * ☑ X1206 Power supply status
+    * ? X1206 Recharging status (need to read pin 16 somehow)
+    * ☑ Pi input voltage
+    * Pi CPU temp (incl. max / min)
+      * (set min to 200 at start)
+    * ☑ CPU fan RPM (tested using 'stress')
+      * add trend graph like HA pi stats
+    * Pi CPU frequency
+    * Throttle status (now/ever)
+    * Uptime
 
 # TODO
 * OS configuration
   * Disable IPv6
   * Tune bootup
 * Assembly
-  * Match batteries to X1206 UPS card (note: button-top batteries are NOT suitable, e.g. X1206 card needs flat 21700s + X1202 card needs flat 18650s.
+  * ☑ Match batteries to X1206 UPS card (note: button-top batteries are NOT suitable, e.g. X1206 card needs flat 21700s + X1202 card needs flat 18650s.
   * Carefully identify correct instructions (geekworm have multiple case/card combinations)
   * Match correct mounting screws to each mounting point (both card-to-pi and the case attachment points)
     * (translucent plastic standoffs are for NVMe hat - not needed here)
