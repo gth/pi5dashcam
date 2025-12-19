@@ -27,8 +27,8 @@ Parts list:
 * ☑ host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
 * ☑ Installed <a href="https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c">gstreamer</a>
 * ☑ Power supply issues; RPi5 tantrums if it doesn't know it can get 5V 5A.  No joy trying to get it to negotiate with a 130W USB C laptop power supply (probably propietary)
-  * ⚠ Reviewed now that X1206 is in place: ; will likely be resolved.
-  * ⚠ For now, able to boot by removing all USB devices and only reinserting once desktop has loaded
+  * ☑ Reviewed now that X1206 is in place: resolved.
+  * ☑ Previously needed to remove all USB devices in order boot up - this is no longer necessary.
 * ☑ Early video testing
   * ☑ First preview working: `DISPLAY=:0 ffplay -hide_banner -f v4l2 -framerate 30 -video_size 1920x1080  -input_format mjpeg  -i /dev/video0`
     * ⚠ Observing a 3 second delay, which is... concerning.
