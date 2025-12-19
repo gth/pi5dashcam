@@ -6,9 +6,14 @@ Parts list:
 * ☑ 4 x 21700 batteries (<a href="">Samsung 40T 4000mAh 35A</a>)
 * ☑ J5Create 360 1080p USB webcam
 * ☑ DFRobot Touchscreen (HDMI + USB) 10.5" 1920x1280
-Geekworm case (that supports the X1206)
+  * ⧖ (screen protector)
 * ☑ 256GB High Endurance uSD card
-* ☑ Geekworm X1206 UPS module (poor choice: does not accept input voltage range that vehicles produce)
+* ☑ Geekworm X1206 UPS module
+  * Pros: Requires larger 21700 batteries (flat-top!); longer runtime.  Con: doesn't accept wide voltage input range like the X1202
+* ⧖ <a href="https://www.amazon.com.au/dp/B0DTTH8ZTY">X1206-C1 Geekworm case</a> (that supports the Pi5 + X1206 card together)
+  * Note that these cases are card specific - e.g. X1202 card will not fit in a X1206-C1 case / X1206 card will not fit in a X1202-C1 case
+* ⧖ <a href="https://www.amazon.com.au/dp/B09B829DL9">Automotive Power voltage regulator board</a> - 9-36V DC input,  5V 5A DC USB output
+
 
 # Current stage: TESTING
 
