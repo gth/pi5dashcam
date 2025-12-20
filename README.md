@@ -56,7 +56,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
     
 # Current stage: Main TESTING
 
-* ☑ X1206 Power supply status (pin 6) needs to handle first boot (needs to be set to input mode)
+* ☑ X1206 status pins (pin 6 and 16) needs to be set to input after reboot
 * Assemble and test using 256GB uSD card as storage
   * flash o/s + test pi speed and temp
   * pi + monitor, test touch screen + power monitor separately from the Pi
@@ -65,6 +65,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
 * ⧖ OS configuration
   * ⧖ Disable IPv6
   * ⧖ Tune bootup
+  * Removed login on first terminal screen - `sudo systemctl disable getty@tty1.service`
 * ⧖ Assembly
   * ⧖ Confirm in-vehicle power consumption (pi) vs. power usage (battery) vs. power supply (vehicle USB C) + battery charging
 * ⧖ Scripts
