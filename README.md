@@ -20,6 +20,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
 * ☑ Pi Imager Customisation options - hostname, (no networking yet), user + password, 
 * ☑ Power up - initially unreliable, slightly more stable once booted to desktop
 * ☑ DHCP + ssh confirmed; uninstalled CUPS
+* ☑ Tune bootup
 * ☑ Background set to (no image), color = black 
 * ☑ Apply latest patches - sudo apt-get update; sudo apt-get upgrade
 * ☑ host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
@@ -33,15 +34,16 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
     * ⚠ Disabled GUI desktop, and now FFPLAY is down to 1-to-1.5 seconds...
   * ☑ Second "GST" method - working! `gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! fbdevsink`
     * ☑ Removed DRM overlay from Pi config.txt - Almost no delay at all. Nice!
+    * ⚠ Not yet able to stretch display to fullscreen (g-st reverting to 640x480 resolution)
   * ☑ X1206 arrived - Pi power on is stable
   * ☑ Add X1206 module + install 4 x 21700 batteries
     * ⚠ Note: button-top batteries are NOT suitable, e.g. X1206 card needs flat 21700s; X1202 card needs flat 18650s.
   * ☑ Carefully follow **correct** instructions (Geekworm/Suptronics have multiple case/card combinations)
   * ☑ Match correct mounting screws to each mounting point (both card-to-pi and the case attachment points)
-    * ⚠ Note: translucent plastic standoffs are for NVMe hat - not needed here.
   * ☑ Install screen protector for LCD
   * ☑ Cooling fan remains *off* unless system gets hot.
   * ☑ Amended eeprom config (max supply current)
+  * ☑ Disable IPv6
   * ☑ Amended firmware/config.txt (max USB current)
   * ☑ Bash scripts (ported from bundled python code)
     * ☑ X1206 Battery state of charge (tested range 0.1%-102%)
@@ -55,18 +57,15 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
     * ☑ Throttle status (now/previously)
     * ☑ Add uptime
   * ☑ Removed login on first terminal screen - `sudo systemctl disable getty@tty1.service`
-    
+* ☑ X1206 status pins (pin 6 and 16) needs to be set to input after reboot (status scripts now detect and auto-fix this issue)
+     
 # Current stage: Main TESTING
 
-* ☑ X1206 status pins (pin 6 and 16) needs to be set to input after reboot
 * Assemble and test using 256GB uSD card as storage
   * ⧖ flash o/s + test pi speed and temp
   * ⧖ pi + monitor, test touch screen + power monitor separately from the Pi
   * ⧖ Test UPS triggers: vehicle accessories vs. low voltage vs. low state of charge (how low?)
   * ⧖ Test 1 x webcam - test basic functionality
-* ⧖ OS configuration
-  * ⧖ Disable IPv6
-  * ⧖ Tune bootup
 * ⧖ Assembly
   * ⧖ Confirm in-vehicle power consumption (pi) vs. power usage (battery) vs. power supply (vehicle USB C) + battery charging
 * ⧖ Scripts
