@@ -53,23 +53,23 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
     * ☑ CPU fan RPM (tested using 'stress')
     * ☑ Pi CPU frequency
     * ☑ Throttle status (now/previously)
+    * ☑ Add uptime
+  * ☑ Removed login on first terminal screen - `sudo systemctl disable getty@tty1.service`
     
 # Current stage: Main TESTING
 
 * ☑ X1206 status pins (pin 6 and 16) needs to be set to input after reboot
 * Assemble and test using 256GB uSD card as storage
-  * flash o/s + test pi speed and temp
-  * pi + monitor, test touch screen + power monitor separately from the Pi
+  * ⧖ flash o/s + test pi speed and temp
+  * ⧖ pi + monitor, test touch screen + power monitor separately from the Pi
   * ⧖ Test UPS triggers: vehicle accessories vs. low voltage vs. low state of charge (how low?)
   * ⧖ Test 1 x webcam - test basic functionality
 * ⧖ OS configuration
   * ⧖ Disable IPv6
   * ⧖ Tune bootup
-  * Removed login on first terminal screen - `sudo systemctl disable getty@tty1.service`
 * ⧖ Assembly
   * ⧖ Confirm in-vehicle power consumption (pi) vs. power usage (battery) vs. power supply (vehicle USB C) + battery charging
 * ⧖ Scripts
-  * ⧖ Add uptime
   * ⧖ Track max / min values (set min to 200 at start)
   * ⧖ Add trend graphs (like HA pi stats?)
   * ⧖ Onscreen **gauges**
