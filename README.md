@@ -46,7 +46,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
   * ☑ Amended eeprom config (max supply current)
   * ☑ Disable IPv6
   * ☑ Amended firmware/config.txt (max USB current)
-  * ☑ Bash scripts (ported from bundled python code)
+  * ☑ Bash scripts (some ported from bundled X120x python code)
     * ☑ X1206 Battery state of charge (tested range 0.1%-102%)
     * ☑ X1206 Input voltage (3.x to 4.x)
     * ☑ X1206 Power supply status (pin 6)
@@ -57,6 +57,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
     * ☑ Pi CPU frequency
     * ☑ Throttle status (now/previously)
     * ☑ Add uptime
+    * - Add memory used/free %
   * ☑ Removed login on first terminal screen - `sudo systemctl disable getty@tty1.service`
 * ☑ X1206 status pins (pin 6 and 16) needs to be set to input after reboot (status scripts now detect and auto-fix this issue)
      
