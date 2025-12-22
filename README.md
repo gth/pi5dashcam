@@ -20,7 +20,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
 * ☑ Pi Imager Customisation options - hostname, (no networking yet), user + password, 
 * ☑ Power up - initially unreliable, slightly more stable once booted to desktop
 * ☑ DHCP + ssh confirmed; uninstalled CUPS
-* ☑ Tune bootup
+* ☑ Tune bootup (reduced to 7 secs)
 * ☑ Background set to (no image), color = black 
 * ☑ Apply latest patches - sudo apt-get update; sudo apt-get upgrade
 * ☑ host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
