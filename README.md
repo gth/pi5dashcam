@@ -16,7 +16,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
 * ⧖ <a href="https://www.amazon.com.au/dp/B0DTTH8ZTY">X1206-C1 Geekworm case</a> (that supports the Pi5 + X1206 card together)
   * Note that these cases are card specific - e.g. X1202 card will not fit in a X1206-C1 case / X1206 card will not fit in a X1202-C1 case
 
-# ☑ Early Test Phase
+# ☑ Hardware Assembly + Operating System setup
 
 * ☑ <a href="https://www.raspberrypi.com/software/">Pi Imager</a> updated and image burned to test SD card - <a href="https://downloads.raspberrypi.com/raspios_arm64/images/raspios_arm64-2025-11-24/2025-11-24-raspios-trixie-arm64.img.xz">Pi OS, Debian 13.2 (64 bit, trixie)</a>
 * ☑ Pi Imager Customisation options - hostname, (no networking yet), user + password, 
@@ -62,7 +62,9 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
   * ☑ Removed login on first terminal screen - `sudo systemctl disable getty@tty1.service`
 * ☑ X1206 status pins (pin 6 and 16) needs to be set to input after reboot (status scripts now detect and auto-fix this issue)
      
-# Current stage: Main TESTING
+# (current stage) **Video Testing**
+
+# Migrating from TEST to PRODUCITON
 
 * Assemble and test using 256GB uSD card as storage
   * ⧖ flash o/s + test pi speed and temp
@@ -71,7 +73,7 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
   * ⧖ Test 1 x webcam - test basic functionality
 * ⧖ Assembly
   * ⧖ Confirm in-vehicle power consumption (pi) vs. power usage (battery) vs. power supply (vehicle USB C) + battery charging
-* ⧖ Scripts
+* ⧖ Enhanced Scripts for at-a-glance viewing
   * ⧖ Track max / min values (set min to 200 at start)
   * ⧖ Add trend graphs (like HA pi stats?)
   * ⧖ Onscreen **gauges**
@@ -82,8 +84,8 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
     * ⧖ Remaining disk space
     * ⧖ Wifi signal 
       
-* Scripts (inspired by Fishwithadeagle)
-  * Test USB display image
+* Additional Scripts (inspired by Fishwithadeagle)
+  * Test HDMI+USB display image
   * test bootup to image
   * test monitor going off/on again doesn't change Pi video out
   * Touchscreen quickset areas:
