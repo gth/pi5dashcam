@@ -26,17 +26,9 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
 * ☑ Background set to (no image), color = black 
 * ☑ Apply latest patches - sudo apt-get update; sudo apt-get upgrade
 * ☑ host rename fix (since raspi=config fails): sudo nano /etc/hosts; sudo nano /etc/hostname
-* ☑ Installed <a href="https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c">gstreamer</a>
 * ☑ Power supply issues; RPi5 tantrums if it doesn't know it can get 5V 5A.  No joy trying to get it to negotiate with a 130W USB C laptop power supply (probably propietary)
   * ☑ Reviewed now that X1206 is in place: resolved.
   * ☑ Previously needed to remove all USB devices in order boot up - this is no longer necessary.
-* ☑ Early video testing
-  * ☑ First preview working: `DISPLAY=:0 ffplay -hide_banner -f v4l2 -framerate 30 -video_size 1920x1080  -input_format mjpeg  -i /dev/video0`
-    * ⚠ Observing a 3 second delay, which is... concerning.
-    * ⚠ Disabled GUI desktop, and now FFPLAY is down to 1-to-1.5 seconds...
-  * ☑ Second "GST" method - working! `gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! fbdevsink`
-    * ☑ Removed DRM overlay from Pi config.txt - Almost no delay at all. Nice!
-    * ⚠ Not yet able to stretch display to fullscreen (g-st reverting to 640x480 resolution)
   * ☑ X1206 arrived - Pi power on is stable
   * ☑ Add X1206 module + install 4 x 21700 batteries
     * ⚠ Note: button-top batteries are NOT suitable, e.g. X1206 card needs flat 21700s; X1202 card needs flat 18650s.
@@ -64,6 +56,26 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
      
 # (current stage) **Video Testing**
 
+* ☑ Installed VLC
+  * ☑ First preview working: `DISPLAY=:0 ffplay -hide_banner -f v4l2 -framerate 30 -video_size 1920x1080  -input_format mjpeg  -i /dev/video0`
+    * ⚠ Observing a 3 second delay, which is... concerning.
+    * ⚠ Disabled GUI desktop, and now FFPLAY is down to 1-to-1.5 seconds...
+* ☑ Installed <a href="https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c">gstreamer</a>
+  * ☑ Second "GST" method - working! `gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! fbdevsink`
+    * ☑ Removed DRM overlay from Pi config.txt - Almost no delay at all. Nice!
+    * ⚠ Not yet able to stretch display to fullscreen (g-st reverting to 640x480 resolution)
+* Outstanding issues:
+  * Unable to obtain anything but 640x480 from J5Create webcam
+  * Unable to display fullscreen (can "stretch" lower resolutions via scaling, but prefer to fetch actual 1920x1080 footage)
+  * Investigating sample C code, and control behaviour via API calls.
+* Yet to test:
+  * 2nd camera
+  * Touch screen
+  * Automotive power input
+  * Accessories on/off control of screen's power
+  * USB extension cables
+  * Audio
+
 # Migrating from TEST to PRODUCITON
 
 * Assemble and test using 256GB uSD card as storage
@@ -73,6 +85,8 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
   * ⧖ Test 1 x webcam - test basic functionality
 * ⧖ Assembly
   * ⧖ Confirm in-vehicle power consumption (pi) vs. power usage (battery) vs. power supply (vehicle USB C) + battery charging
+  * ⧖ (black) 3D printed shroud for cameras + hide LEDs
+  * ⧖ in-vehicle cable routing 
 * ⧖ Enhanced Scripts for at-a-glance viewing
   * ⧖ Track max / min values (set min to 200 at start)
   * ⧖ Add trend graphs (like HA pi stats?)
