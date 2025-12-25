@@ -9,11 +9,12 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
   * ☑ Temporary screen protector; ⧖ waiting on properly sized protector
 * ☑ 256GB High Endurance uSD card
 * ☑ Geekworm X1206 UPS module
-  * Pros: Requires larger 21700 batteries (flat-top!); longer runtime.  Con: doesn't accept wide voltage input range like the X1202
+  * Pros: Requires larger 21700 batteries (flat-top!); longer runtime.
+  * Con: doesn't accept wide voltage input range like the X1202
+* ☑ <a href="https://www.amazon.com.au/dp/B09B829DL9">Automotive Power voltage regulator board</a> - 9-36V DC input,  5V 5A DC USB output
+* ☑ 3M double-sided tape (12.5mm x 5.5m)
 * ⧖ <a href="https://www.amazon.com.au/dp/B0DTTH8ZTY">X1206-C1 Geekworm case</a> (that supports the Pi5 + X1206 card together)
   * Note that these cases are card specific - e.g. X1202 card will not fit in a X1206-C1 case / X1206 card will not fit in a X1202-C1 case
-* ⧖ <a href="https://www.amazon.com.au/dp/B09B829DL9">Automotive Power voltage regulator board</a> - 9-36V DC input,  5V 5A DC USB output
-* ⧖ 3M double-sided tape (12.5mm x 5.5m)
 
 # ☑ Early Test Phase
 
