@@ -13,8 +13,8 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
   * Con: doesn't accept wide voltage input range like the X1202
 * ☑ <a href="https://www.amazon.com.au/dp/B09B829DL9">Automotive Power voltage regulator board</a> - 9-36V DC input,  5V 5A DC USB output
 * ☑ 3M double-sided tape (12.5mm x 5.5m)
-* ⧖ <a href="https://www.amazon.com.au/dp/B0DTTH8ZTY">X1206-C1 Geekworm case</a> (that supports the Pi5 + X1206 card together)
-  * Note that these cases are card specific - e.g. X1202 card will not fit in a X1206-C1 case / X1206 card will not fit in a X1202-C1 case
+* ☑ <a href="https://www.amazon.com.au/dp/B0DTTH8ZTY">X1206-C1 Geekworm case</a> (that supports the Pi5 + X1206 card together)
+  * ! These cases are card specific - e.g. X1202 card will not fit in a X1206-C1 case / X1206 card will not fit in a X1202-C1 case
 
 # ☑ Hardware Assembly + Operating System setup
 
@@ -53,8 +53,19 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
     * - Add memory used/free %
   * ☑ Removed login on first terminal screen - `sudo systemctl disable getty@tty1.service`
 * ☑ X1206 status pins (pin 6 and 16) needs to be set to input after reboot (status scripts now detect and auto-fix this issue)
+
+# (current task) REBUILD ON 256GB uSD card
+  * ☑ flash o/s to 256GB uSD card
+  * ☑ migrate scripts to "Pi desktop" environment (terminal windows, for now)
+  * - (in progress) setup/activate patches and scripts / install missing modules
+  * ⧖ Verify UPS, RTC, etc.
+  * ⧖ pi + portable HDMI monitor
+  * ⧖ test touch screen (drivers?)
+  * ⧖ test powering monitor separately from the Pi + screen on/off transitions while Pi remains on
+  * ⧖ Test UPS triggers: vehicle accessories vs. low voltage vs. low state of charge (how low?)
+  * ⧖ Test 1 x webcam - test basic functionality
      
-# (current stage) **Video Testing**
+# (on hold) **Video Testing**
 
 * ☑ Installed VLC
   * ☑ First preview working: `DISPLAY=:0 ffplay -hide_banner -f v4l2 -framerate 30 -video_size 1920x1080  -input_format mjpeg  -i /dev/video0`
@@ -63,12 +74,13 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
 * ☑ Installed <a href="https://gstreamer.freedesktop.org/documentation/installing/on-linux.html?gi-language=c">gstreamer</a>
   * ☑ Second "GST" method - working! `gst-launch-1.0 -v v4l2src device=/dev/video0 ! videoconvert ! fbdevsink`
     * ☑ Removed DRM overlay from Pi config.txt - Almost no delay at all. Nice!
-    * ⚠ Not yet able to stretch display to fullscreen (g-st reverting to 640x480 resolution)
+    * ⚠ Not yet able to stretch display to fullscreen (g-st reverting to 640x480 resolution)  - :( :(
 * Outstanding issues:
   * Unable to obtain anything but 640x480 from J5Create webcam
   * Unable to display fullscreen (can "stretch" lower resolutions via scaling, but prefer to fetch actual 1920x1080 footage)
   * Investigating sample C code, and control behaviour via API calls.
-* Yet to test:
+
+# Yet to test:
   * 2nd camera
   * Touch screen
   * Automotive power input
@@ -76,13 +88,8 @@ Use a Raspberry Pi 5 + UPS module + USB camera as a rear dashcam  recording 24x7
   * USB extension cables
   * Audio
 
-# Migrating from TEST to PRODUCITON
+# Migrating from TEST to PRODUCTION
 
-* Assemble and test using 256GB uSD card as storage
-  * ⧖ flash o/s + test pi speed and temp
-  * ⧖ pi + monitor, test touch screen + power monitor separately from the Pi
-  * ⧖ Test UPS triggers: vehicle accessories vs. low voltage vs. low state of charge (how low?)
-  * ⧖ Test 1 x webcam - test basic functionality
 * ⧖ Assembly
   * ⧖ Confirm in-vehicle power consumption (pi) vs. power usage (battery) vs. power supply (vehicle USB C) + battery charging
   * ⧖ (black) 3D printed shroud for cameras + hide LEDs
